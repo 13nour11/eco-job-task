@@ -45,8 +45,8 @@ npm run dev
 Open your browser and navigate to http://localhost:3000.
 
 Usage
-On the home page, you can find the navigation bar at the top.
-Click the search icon to display the search input.
-Use the select dropdown to navigate to the items page.
-On the items page, click on any row to expand it and view additional data.
-Nested expandable rows are available for more details.
+- On the home page, you can find the navigation bar at the top.
+- Click the search icon to display the search input.
+- Use the select dropdown to navigate to the items page.
+- On the items page, click on any row to expand it and view additional data.
+- Nested expandable rows are available for more details.
