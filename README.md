@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Small Dashboard
 
-## Getting Started
+A small dashboard application built using **Next.js** and **Fiori UI5 Web Components for React**.
 
-First, run the development server:
+## Features
 
-```bash
+- **Home Page**: A landing page with a user-friendly interface.
+- **Items Page**: A page displaying a data table with expandable rows.
+- **Navigation Bar**: 
+  - Click on the search icon to display the search input.
+  - Use the select option to navigate to specific pages.
+- **Expandable Rows**: 
+  - Click on any row to expand it and view additional data.
+  - Nested expandable rows are available for further details.
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-rendered applications.
+- **Fiori UI5 Web Components**: Provides reusable UI components for building responsive web applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Axios**: For making HTTP requests to fetch data.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/13nour11/eco-job-task
+Navigate to the project directory:
+
+bash
+Copy code
+cd eco-job-task
+Install the dependencies:
+
+bash
+Copy code
+npm install
+Run the development server:
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open your browser and navigate to http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Usage
+On the home page, you can find the navigation bar at the top.
+Click the search icon to display the search input.
+Use the select dropdown to navigate to the items page.
+On the items page, click on any row to expand it and view additional data.
+Nested expandable rows are available for more details.
