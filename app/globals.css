@@ -40,3 +40,9 @@ a {
     color-scheme: dark;
   }
 }
+
+/* =========================== */
+img {
+  width: 100%; /* Or whatever value you're using */
+  height: auto; /* This maintains the aspect ratio */
+}

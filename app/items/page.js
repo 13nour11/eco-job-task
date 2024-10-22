@@ -1,8 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { AnalyticalTable, FlexBox, Input, Button } from "@ui5/webcomponents-react";
+import {
+  AnalyticalTable,
+  // FlexBox,
+  // Input,
+  // Button,
+  // DatePicker,
+  // Option,
+  // Select,
+  // Label,
+} from "@ui5/webcomponents-react";
+import "@ui5/webcomponents-icons/dist/AllIcons.js";
 import RenderRowSubComponent from "../compnents/RenderRowSubComponent"; //r
 import axios from "axios";
+import SecNavBox from "../compnents/SecNavBox";
 
 const Items = () => {
   const [expandedRowIds, setExpandedRowIds] = useState([]);
@@ -31,7 +42,9 @@ const Items = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("https://13nour11.github.io/eco-data/data.json");
+        const response = await axios.get(
+          "https://13nour11.github.io/eco-data/data.json"
+        );
         setData(response.data);
       } catch (error) {
         setError("Failed to fetch data.");
@@ -40,46 +53,35 @@ const Items = () => {
         setLoading(false);
       }
     };
-    
+
     fetchData();
   }, []);
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Items Tree Table</h1>
+      {/* <h1>Items Tree Table</h1> */}
       {loading ? (
-        <p style={{textAlign:"center"}}>Loading data...</p>
+        <p style={{ textAlign: "center" }}>Loading data...</p>
       ) : error ? (
         <p>{error}</p>
-      ) 
-      : (
+      ) : (
         <>
-          <div style={{ marginBottom: "20px" }}>
-            <FlexBox
-              justifyContent="SpaceBetween"
-              alignItems="Center"
-              style={{ gap: "10px", flexWrap: "wrap" }}
-            >
-              <Input placeholder="Input 1" />
-              <Input placeholder="Input 2" />
-              <Input placeholder="Input 3" />
-              <Input placeholder="Input 4" />
-              <Button design="Emphasized">Search</Button>
-            </FlexBox>
+          <SecNavBox />
+          <div style={{ background: "#f3f3f3", padding: "20px" }}>
+            <AnalyticalTable
+              data={data}
+              columns={mainColumns}
+              renderRowSubComponent={(row) => (
+                <RenderRowSubComponent
+                  row={row}
+                  expandedRowIds={expandedRowIds}
+                  setExpandedRowIds={setExpandedRowIds}
+                  mainColumns={mainColumns}
+                />
+              )}
+              subComponentsBehavior="None"
+            />
           </div>
-          <AnalyticalTable
-            data={data}
-            columns={mainColumns}
-            renderRowSubComponent={(row) => (
-              <RenderRowSubComponent
-                row={row}
-                expandedRowIds={expandedRowIds}
-                setExpandedRowIds={setExpandedRowIds}
-                mainColumns={mainColumns}
-              />
-            )}
-            subComponentsBehavior="None"
-          />
         </>
       )}
     </div>
